@@ -6,10 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.andy6804tw.dengueweather.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:text="clic"
+        android:onClick="click"/>
 </android.support.constraint.ConstraintLayout>

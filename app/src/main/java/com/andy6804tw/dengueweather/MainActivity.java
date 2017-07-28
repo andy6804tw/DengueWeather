@@ -1,11 +1,13 @@
 package com.andy6804tw.dengueweather;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -33,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         //載入圖片
-        new DownloadImageTask((ImageView) findViewById(R.id.imageView))
-                .execute("http://l.yimg.com/os/mit/media/m/social/images/social_default_logo-1481777.png");
         init();
 
     }
@@ -72,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
+
+    public void click(View view) {
+        startActivity(new Intent(this,WeatherNowActivity.class));
+    }
+
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
