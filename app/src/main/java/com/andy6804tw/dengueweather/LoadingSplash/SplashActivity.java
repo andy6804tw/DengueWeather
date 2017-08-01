@@ -14,6 +14,7 @@ import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -29,6 +30,12 @@ import com.andy6804tw.dengueweather.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
 
 import static android.os.Build.VERSION_CODES.M;
 
@@ -39,6 +46,7 @@ public class SplashActivity extends AppCompatActivity {
     private double mLatitude,mLongitude;
     private String mLanguage="en",mCity,mCountry,mDistrict,mVillage;
     private Context mContext;
+    private static Document document;
 
 
     @Override
@@ -54,6 +62,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        initDengueNews();
         GPSPremessionCheck();
     }
 
@@ -331,5 +340,36 @@ public class SplashActivity extends AppCompatActivity {
                 alertDialog.show();
             }
         }
+    }
+    public static void initDengueNews(){
+
+        //登革熱新聞
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    document = Jsoup.connect("http://www.cdc.gov.tw/professional/list.aspx?did=641&treeid=6FD88FC9BF76E125&nowtreeid=283F5B5821AF305B")
+                            .timeout(3000)
+                            .get();
+                    Elements noteList = document.select("div.in_list").select("ul").select("li");
+                    int c=0;
+                    //Log.e("Name"+c++,Image.attr("abs:src"));
+                    for (Element element:noteList){
+                        String data[]=element.select("td").text().split(" ");
+                        String title=data[0];
+                        String url=element.select("a").attr("abs:href");
+                        String date=data[2];
+                        Log.e("Data"+c++,title+"     "+date+"      "+url);
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.i("TAG", "run: " + e.getMessage());
+                }
+
+            }
+        }).start();
+
     }
 }
