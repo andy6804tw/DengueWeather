@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DengueWeather</string>
+    <string name="copyright">Copyright © 2017 Weather disease. All rights reserved. </string>
 
     <string name="code00">龍捲風</string>
     <string name="code01">熱帶風暴</string>
