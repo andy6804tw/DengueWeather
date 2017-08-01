@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WeatherView Library</string>
+    <string name="pressure">Pressure</string>
+    <string name="windSpeed">WindSpeed</string>
+</resources>

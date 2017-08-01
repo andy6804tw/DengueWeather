@@ -1,13 +1,20 @@
 package com.andy6804tw.dengueweather.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.andy6804tw.dengueweather.DataBase.DBAccessWeather;
 import com.andy6804tw.dengueweather.R;
 import com.github.pwittchen.weathericonview.WeatherIconView;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by andy6804tw on 2017/7/27.
@@ -16,6 +23,9 @@ import com.github.pwittchen.weathericonview.WeatherIconView;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     private Context mContext;
+    private DBAccessWeather mAccess;
+    private SharedPreferences settings;
+
 
     public RecyclerAdapter(Context context){
         mContext=context;
@@ -23,10 +33,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     class ViewHolder extends RecyclerView.ViewHolder{
 
         private WeatherIconView weatherIconView;
-
+        private TextView tvTemperature,tvDay;
         public ViewHolder(View itemView) {
             super(itemView);
             weatherIconView = (WeatherIconView) itemView.findViewById(R.id.my_weather_icon);
+            tvTemperature=(TextView)itemView.findViewById(R.id.tvTemperature);
+            tvDay=(TextView)itemView.findViewById(R.id.tvDay);
 
         }
     }
@@ -40,11 +52,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        //天氣圖示
-        viewHolder.weatherIconView.setIconSize(25);
-        viewHolder.weatherIconView.setIconColor(Color.WHITE);
-        viewHolder.weatherIconView.setIconResource(weatherIcon(15));
+    public void onBindViewHolder(ViewHolder viewHolder, int position) {
+        mAccess = new DBAccessWeather(mContext, "weather", null, 1);
+        settings=mContext.getSharedPreferences("Data",MODE_PRIVATE);
+        Cursor cl8 = mAccess.getData("Forecast",null,null);
+        cl8.moveToPosition(position);
+            //set Day
+            if(position==0)
+                viewHolder.tvDay.setText(mContext.getString(R.string.Today));
+            else if(position==1)
+                viewHolder.tvDay.setText(mContext.getString(R.string.Tomorrow));
+            else
+                viewHolder.tvDay.setText(day(cl8.getString(2)));
+            //set temperature
+            if(settings.getString("Temperature","").equals("°C")||settings.getString("Temperature","").equals(""))
+                viewHolder.tvTemperature.setText((int)Math.round((cl8.getShort(4)-32)*5/9.)+"°/"+(int)Math.round((cl8.getShort(3)-32)*5/9.)+"°");
+            else
+                viewHolder.tvTemperature.setText(cl8.getShort(4)+"°/"+cl8.getShort(3)+"°");
+            //set icon
+            viewHolder.weatherIconView.setIconSize(25);
+            viewHolder.weatherIconView.setIconColor(Color.WHITE);
+            viewHolder.weatherIconView.setIconResource(weatherIcon(cl8.getShort(5)));
     }
 
     @Override
@@ -151,5 +179,28 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             return mContext.getString(R.string.wi_yahoo_47);
         else
             return mContext.getString(R.string.wi_yahoo_3200);
+    }
+    public String day(String day){
+        if(day.equals("Sun")){
+            return mContext.getResources().getString(R.string.Sun);
+        }
+        else if(day.equals("Mon")){
+            return mContext.getResources().getString(R.string.Mon);
+        }
+        else if(day.equals("Tue")){
+            return mContext.getResources().getString(R.string.Tue);
+        }
+        else if(day.equals("Wed")){
+            return mContext.getResources().getString(R.string.Wed);
+        }
+        else if(day.equals("Thu")){
+            return mContext.getResources().getString(R.string.Thu);
+        }
+        else if(day.equals("Fri")){
+            return mContext.getResources().getString(R.string.Fri);
+        }
+        else{
+            return mContext.getResources().getString(R.string.Sat);
+        }
     }
 }
