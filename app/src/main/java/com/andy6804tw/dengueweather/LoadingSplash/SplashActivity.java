@@ -24,8 +24,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.andy6804tw.dengueweather.DataBase.DBAccessWeather;
+import com.andy6804tw.dengueweather.MainActivity;
 import com.andy6804tw.dengueweather.R;
-import com.andy6804tw.dengueweather.WeatherNowActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -98,7 +98,7 @@ public class SplashActivity extends AppCompatActivity {
                         onResume();
                     }
                     else
-                        startActivity( new Intent(SplashActivity.this, WeatherNowActivity.class));
+                        startActivity( new Intent(SplashActivity.this, MainActivity.class));
                 }
             }, 3500);
         }
