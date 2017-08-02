@@ -37,6 +37,8 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
+import taobe.tec.jcc.JChineseConvertor;
+
 import static android.os.Build.VERSION_CODES.M;
 
 public class SplashActivity extends AppCompatActivity {
@@ -65,6 +67,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         initDengueNews();
+        initWHONews();
         GPSPremessionCheck();
     }
 
@@ -362,7 +365,42 @@ public class SplashActivity extends AppCompatActivity {
                         String title=data[0];
                         String url=element.select("a").attr("abs:href");
                         String date=data[2];
-                        Log.e("Data"+c++,title+"     "+date+"      "+url);
+                        //Log.e("Data"+c++,title+"     "+date+"      "+url);
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.i("TAG", "run: " + e.getMessage());
+                }
+
+            }
+        }).start();
+
+    }
+    public static void initWHONews(){
+
+        //WHO新聞
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    document = Jsoup.connect("http://www.who.int/feeds/entity/csr/don/zh/rss.xml")
+                            .timeout(3000)
+                            .get();
+                    Elements noteList = document.select("channel").select("item");
+                    int c=0;
+                    //Log.e("Name"+c++,Image.attr("abs:src"));
+                    Log.e("Data",noteList.size()+"");
+                    for (Element element:noteList){
+                        //簡體轉繁體
+                        JChineseConvertor jChineseConvertor = JChineseConvertor.getInstance();
+                        String title=element.select("title").text();
+                        String description=element.select("description").text();
+                        String pubDate=element.select("pubDate").text();
+                        String link=element.select("link").text();
+
+                        Log.e("Data"+c++,jChineseConvertor.s2t(title)+" "+jChineseConvertor.s2t(description)+" "+jChineseConvertor.s2t(pubDate)+" "+link);
                     }
 
                 } catch (IOException e) {

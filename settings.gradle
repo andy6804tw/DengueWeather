@@ -1,1 +1,1 @@
-include ':app', ':weatherviewlibrary'
+include ':app', ':weatherviewlibrary', ':spanmenulibrary', ':spinmenulibrary'
