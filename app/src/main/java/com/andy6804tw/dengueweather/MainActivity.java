@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.andy6804tw.dengueweather.Fragment.Fragment1;
 import com.andy6804tw.dengueweather.Fragment.Fragment2;
 import com.andy6804tw.dengueweather.Fragment.WeatherNowFragment;
-import com.andy6804tw.spinmenulibrary.OnSpinMenuStateChangeListener;
-import com.andy6804tw.spinmenulibrary.SpinMenu;
+import com.andy6804tw.dengueweather.SpinMenu.OnSpinMenuStateChangeListener;
+import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         hintStrList.add("阅读空间");
         hintStrList.add("听听唱唱");
         hintStrList.add("系统设置");
-
+        spinMenu.setContent(MainActivity.this);
         spinMenu.setHintTextStrList(hintStrList);
         spinMenu.setHintTextColor(Color.parseColor("#FFFFFF"));
         spinMenu.setHintTextSize(14);
@@ -47,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         // 设置页面适配器
         final List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new WeatherNowFragment());
+        fragmentList.add(new Fragment1());
         fragmentList.add(new Fragment1());
         fragmentList.add(new Fragment2());
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
         spinMenu.setOnSpinMenuStateChangeListener(new OnSpinMenuStateChangeListener() {
             @Override
             public void onMenuOpened() {
-                Toast.makeText(MainActivity.this, "SpinMenu opened", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "SpinMenu opened", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onMenuClosed() {
-                Toast.makeText(MainActivity.this, "SpinMenu closed", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "SpinMenu closed", Toast.LENGTH_SHORT).show();
             }
         });
 

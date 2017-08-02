@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.andy6804tw.spinmenulibrary.SpinMenu xmlns:android="http://schemas.android.com/apk/res/android"
+<com.andy6804tw.dengueweather.SpinMenu.SpinMenu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/spin_menu"
@@ -15,5 +15,5 @@
         android:layout_height="match_parent"
         android:background="#ffffff"></FrameLayout>
 
-</com.andy6804tw.spinmenulibrary.SpinMenu>
+</com.andy6804tw.dengueweather.SpinMenu.SpinMenu>
 
