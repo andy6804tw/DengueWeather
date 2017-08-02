@@ -22,7 +22,9 @@
         </activity>
         <activity android:name=".WeatherNowActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".EarthMapActivity" />
+        <activity android:name=".DengueMapActivity"></activity>
     </application>
 
 </manifest>

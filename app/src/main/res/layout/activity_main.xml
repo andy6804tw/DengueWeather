@@ -13,7 +13,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"></FrameLayout>
+        android:background="@mipmap/menu_background"/>
 
 </com.andy6804tw.dengueweather.SpinMenu.SpinMenu>
 

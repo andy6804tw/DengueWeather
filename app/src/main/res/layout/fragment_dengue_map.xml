@@ -8,6 +8,6 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/fragment_weather_earth"/>
+        android:src="@mipmap/fragment_dengue_map"/>
 
 </RelativeLayout>

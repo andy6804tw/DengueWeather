@@ -2,4 +2,6 @@
     <string name="app_name">WeatherView Library</string>
     <string name="pressure">Pressure</string>
     <string name="windSpeed">WindSpeed</string>
+    <string name="sunrise">sunrise</string>
+    <string name="sunset">sunset</string>
 </resources>

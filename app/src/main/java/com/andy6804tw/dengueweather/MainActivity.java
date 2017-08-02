@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
-import com.andy6804tw.dengueweather.Fragment.Fragment1;
-import com.andy6804tw.dengueweather.Fragment.Fragment2;
+import com.andy6804tw.dengueweather.Fragment.DengueMapFragment;
+import com.andy6804tw.dengueweather.Fragment.EarthMapFragment;
+import com.andy6804tw.dengueweather.Fragment.NewsFragment;
 import com.andy6804tw.dengueweather.Fragment.WeatherNowFragment;
 import com.andy6804tw.dengueweather.SpinMenu.OnSpinMenuStateChangeListener;
 import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
@@ -22,15 +24,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//頂部工具列隱
         spinMenu = (SpinMenu) findViewById(R.id.spin_menu);
 
         // 设置页面标题
         List<String> hintStrList = new ArrayList<>();
-        hintStrList.add("热门信息");
-        hintStrList.add("实时新闻");
-        hintStrList.add("我的论坛");
-        hintStrList.add("我的信息");
+        hintStrList.add("即時天氣");
+        hintStrList.add("國際新聞");
+        hintStrList.add("全球地圖");
+        hintStrList.add("登革熱地圖");
         hintStrList.add("走走看看");
         hintStrList.add("阅读空间");
         hintStrList.add("听听唱唱");
@@ -46,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         // 设置页面适配器
         final List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new WeatherNowFragment());
-        fragmentList.add(new Fragment1());
-        fragmentList.add(new Fragment1());
-        fragmentList.add(new Fragment2());
+        fragmentList.add(new NewsFragment());
+        fragmentList.add(new EarthMapFragment());
+        fragmentList.add(new DengueMapFragment());
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

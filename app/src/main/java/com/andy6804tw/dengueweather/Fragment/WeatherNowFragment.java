@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.andy6804tw.dengueweather.Adapter.RecyclerAdapter;
 import com.andy6804tw.dengueweather.DataBase.DBAccessWeather;
 import com.andy6804tw.dengueweather.R;
+import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
 import com.andy6804tw.weatherviewlibrary.WeatherView;
 import com.github.pwittchen.weathericonview.WeatherIconView;
 
@@ -36,10 +37,11 @@ public class WeatherNowFragment extends Fragment {
     private WeatherView weatherView;
     private DBAccessWeather mAccess;  //DataBase for weather
     private SharedPreferences settings;//設定
-    private TextView tvTime,tvCity,tvLow,tvHigh,tvTemperature,tvCondition;
+    private TextView tvTime,tvCity,tvLow,tvHigh,tvTemperature,tvCondition,tvFelt,tvHumidity,tvVisiblity;
     private ImageView ivNow;
     private Context mContext;
     private View mView;
+    private ImageView ivMenu;
 
     public WeatherNowFragment() {
         // Required empty public constructor
@@ -62,11 +64,39 @@ public class WeatherNowFragment extends Fragment {
         adapter = new RecyclerAdapter(mContext);
         recyclerView.setAdapter(adapter);
 
-        initView();//載入View
+        ivMenu=(ImageView) view.findViewById(R.id.ivMenu);
+        ivMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpinMenu.openMenu();
+            }
+        });
+
         initInfo();//載入目前時間地點
-        initWeatherView();
+        initView();//載入View
+        initOther();//其他資訊
+        initWeatherView();//風車日出落
+
 
         return view;
+    }
+    private void initOther(){
+        tvFelt=(TextView)mView.findViewById(R.id.tvFelt);
+        tvHumidity=(TextView)mView.findViewById(R.id.tvHumidity);
+        tvVisiblity=(TextView)mView.findViewById(R.id.tvVisiblity);
+        //載入大氣資料
+        Cursor c = mAccess.getData("Atmosphere", null, null);
+        c.moveToFirst();
+        //載入體感溫度資料
+        Cursor c3 = mAccess.getData("Wind", null, null);
+        c3.moveToFirst();
+        if(settings.getString("Temperature","").equals("°C")||settings.getString("Temperature","").equals("")) {
+            tvFelt.setText(Math.round((c3.getShort(1)-32)*5/9.)+"°C");
+        }else{
+            tvFelt.setText(c3.getString(1)+"°F");
+        }
+        tvHumidity.setText(c.getString(1)+" %");
+        tvVisiblity.setText(c.getString(3)+" km");
     }
     private void initWeatherView() {
         /**天文**/

@@ -139,10 +139,10 @@ public class WeatherView extends View {
             final float pressureTextRight = width / 2f + sunArcRadius - textSize * 2.5f;
             canvas.drawText(getResources().getString(R.string.pressure)+" " + pressure + " millibars", pressureTextRight, sunArcHeight + paintTextOffset, paint);
             // draw astor info
-            final float textLeft = width / 2f - sunArcRadius;// sunArcSize;
+            final float textLeft = width / 2f - sunArcRadius+11;// sunArcSize;
             paint.setTextAlign(Paint.Align.CENTER);
-            canvas.drawText("日出 " + sunrise, textLeft, textSize * 10.5f + paintTextOffset, paint);
-            canvas.drawText(sunset + " 日落", width - textLeft, textSize * 10.5f + paintTextOffset, paint);
+            canvas.drawText(getResources().getString(R.string.sunrise)+" "+ sunrise, textLeft, textSize * 10.5f + paintTextOffset, paint);
+            canvas.drawText(sunset +" "+ getResources().getString(R.string.sunset), width - textLeft, textSize * 10.5f + paintTextOffset, paint);
         } catch (Exception e1) {
             e1.printStackTrace();
         }

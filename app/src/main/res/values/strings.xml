@@ -3,6 +3,9 @@
     <string name="pressure">Pressure</string>
     <string name="windSpeed">WindSpeed</string>
     <string name="copyright">Copyright © 2017 Weather disease. All rights reserved. </string>
+    <string name="felt">felt</string>
+    <string name="humidity">humidity</string>
+    <string name="visiblity">visiblity</string>
 
     <string name="code00">tornado</string>
     <string name="code01">tropical storm</string>

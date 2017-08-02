@@ -19,6 +19,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.andy6804tw.dengueweather.DengueMapActivity;
+import com.andy6804tw.dengueweather.EarthMapActivity;
 import com.andy6804tw.dengueweather.NewsActivity;
 import com.andy6804tw.dengueweather.R;
 
@@ -116,7 +118,7 @@ public class SpinMenu extends FrameLayout {
     /**
      * 默认打开菜单时页面缩小的比率
      */
-    private float scaleRatio = .36f;
+    private float scaleRatio = 0.45f;
 
     /**
      * 控件是否初始化的标记变量
@@ -156,6 +158,10 @@ public class SpinMenu extends FrameLayout {
             closeMenu(smItemLayout);
             if(mPosition==1)
                 mContext.startActivity(new Intent(mContext, NewsActivity.class));
+            else if(mPosition==2)
+                mContext.startActivity(new Intent(mContext, EarthMapActivity.class));
+            else if(mPosition==3)
+                mContext.startActivity(new Intent(mContext, DengueMapActivity.class));
         }
     };
 
@@ -185,7 +191,7 @@ public class SpinMenu extends FrameLayout {
         super(context, attrs, defStyleAttr);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SpinMenu);
-        scaleRatio = typedArray.getFloat(R.styleable.SpinMenu_scale_ratio, scaleRatio);
+        //scaleRatio = typedArray.getFloat(R.styleable.SpinMenu_scale_ratio, scaleRatio);
         hintTextSize = typedArray.getDimensionPixelSize(R.styleable.SpinMenu_hint_text_size, hintTextSize);
         hintTextSize = px2Sp(hintTextColor);
         hintTextColor = typedArray.getColor(R.styleable.SpinMenu_hint_text_color, hintTextColor);

@@ -2,6 +2,9 @@
 <resources>
     <string name="app_name">DengueWeather</string>
     <string name="copyright">Copyright © 2017 Weather disease. All rights reserved. </string>
+    <string name="felt">體感溫度</string>
+    <string name="humidity">濕度</string>
+    <string name="visiblity">能見度</string>
 
     <string name="code00">龍捲風</string>
     <string name="code01">熱帶風暴</string>

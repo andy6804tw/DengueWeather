@@ -9,7 +9,7 @@ import android.view.KeyEvent;
 import com.andy6804tw.dengueweather.Adapter.ViewPagerAdapter;
 import com.andy6804tw.dengueweather.Fragment.Fragment1;
 import com.andy6804tw.dengueweather.Fragment.Fragment2;
-import com.andy6804tw.dengueweather.Fragment.NewsFragment;
+import com.andy6804tw.dengueweather.Fragment.TaiwanNewsFragment;
 import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
 import com.kekstudio.dachshundtablayout.DachshundTabLayout;
 import com.kekstudio.dachshundtablayout.indicators.DachshundIndicator;
@@ -27,12 +27,12 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         toolbar=(Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("全球新聞");
+        toolbar.setTitle("登革熱災情");
         setSupportActionBar(toolbar);
 
         viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragments(new NewsFragment(),"目前狀況");
-        viewPagerAdapter.addFragments(new Fragment2(),"新聞");
+        viewPagerAdapter.addFragments(new TaiwanNewsFragment(),"台灣");
+        viewPagerAdapter.addFragments(new Fragment2(),"全球");
         viewPagerAdapter.addFragments(new Fragment1(),"看見空品");
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setAdapter(viewPagerAdapter);
