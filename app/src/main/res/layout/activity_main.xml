@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.andy6804tw.spinmenulibrary.SpinMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/spin_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="#CDDBEE"
+    app:hint_text_color="#FFFFFF"
+    app:hint_text_size="14sp"
+    app:scale_ratio="0.36"
     tools:context="com.andy6804tw.dengueweather.MainActivity">
 
-    <include layout="@layout/content_main" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"></FrameLayout>
 
-</FrameLayout>
+</com.andy6804tw.spinmenulibrary.SpinMenu>
+

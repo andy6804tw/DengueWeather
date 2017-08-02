@@ -1,65 +1,79 @@
 package com.andy6804tw.dengueweather;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.Toast;
 
-import com.andy6804tw.dengueweather.Fragment.EarthMapFragment;
 import com.andy6804tw.dengueweather.Fragment.Fragment1;
 import com.andy6804tw.dengueweather.Fragment.Fragment2;
 import com.andy6804tw.dengueweather.Fragment.WeatherNowFragment;
-import com.dxtt.coolmenu.CoolMenuFrameLayout;
+import com.andy6804tw.spinmenulibrary.OnSpinMenuStateChangeListener;
+import com.andy6804tw.spinmenulibrary.SpinMenu;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private SpinMenu spinMenu;
 
-    Button bt;
-    boolean open;
-    CoolMenuFrameLayout coolMenuFrameLayout;
-    List<Fragment> fragments = new ArrayList<>();
-
-    List<String> titleList = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        coolMenuFrameLayout = $(R.id.rl_main);
-        String[] titles = {"", "", "",""};
-        titleList = Arrays.asList(titles);
-        coolMenuFrameLayout.setTitles(titleList);
 
+        spinMenu = (SpinMenu) findViewById(R.id.spin_menu);
 
-        fragments.add(new Fragment2());
-        fragments.add(new Fragment1());
-        fragments.add(new EarthMapFragment());
-        fragments.add(new WeatherNowFragment());
+        // 设置页面标题
+        List<String> hintStrList = new ArrayList<>();
+        hintStrList.add("热门信息");
+        hintStrList.add("实时新闻");
+        hintStrList.add("我的论坛");
+        hintStrList.add("我的信息");
+        hintStrList.add("走走看看");
+        hintStrList.add("阅读空间");
+        hintStrList.add("听听唱唱");
+        hintStrList.add("系统设置");
 
+        spinMenu.setHintTextStrList(hintStrList);
+        spinMenu.setHintTextColor(Color.parseColor("#FFFFFF"));
+        spinMenu.setHintTextSize(14);
 
-        FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+        // 设置启动手势开启菜单
+        spinMenu.setEnableGesture(true);
+
+        // 设置页面适配器
+        final List<Fragment> fragmentList = new ArrayList<>();
+        fragmentList.add(new WeatherNowFragment());
+        fragmentList.add(new Fragment1());
+        fragmentList.add(new Fragment2());
+        FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return fragments.get(position);
+                return fragmentList.get(position);
             }
 
             @Override
             public int getCount() {
-                return fragments.size();
+                return fragmentList.size();
             }
         };
-        coolMenuFrameLayout.setAdapter(adapter);
-    }
+        spinMenu.setFragmentAdapter(fragmentPagerAdapter);
 
-    @SuppressWarnings("unchecked")
-    private <T extends View> T $(@IdRes int id) {
-        return (T) findViewById(id);
+        // 设置菜单状态改变时的监听器
+        spinMenu.setOnSpinMenuStateChangeListener(new OnSpinMenuStateChangeListener() {
+            @Override
+            public void onMenuOpened() {
+                Toast.makeText(MainActivity.this, "SpinMenu opened", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onMenuClosed() {
+                Toast.makeText(MainActivity.this, "SpinMenu closed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
