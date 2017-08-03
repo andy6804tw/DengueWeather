@@ -386,7 +386,7 @@ public class SplashActivity extends AppCompatActivity {
         }).start();
 
     }
-    public static void initWHONews(){
+    public  void initWHONews(){
 
         //WHO新聞
         new Thread(new Runnable() {
@@ -394,7 +394,12 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
                 try {
-                    document = Jsoup.connect("http://www.who.int/feeds/entity/csr/don/zh/rss.xml")
+                    String url="";
+                    if(getResources().getConfiguration().locale.getCountry().equals("TW") )
+                        url="http://www.who.int/feeds/entity/csr/don/zh/rss.xml";
+                    else
+                        url="http://www.who.int/feeds/entity/csr/don/en/rss.xml";
+                    document = Jsoup.connect(url)
                             .timeout(3000)
                             .get();
                     Elements noteList = document.select("channel").select("item");

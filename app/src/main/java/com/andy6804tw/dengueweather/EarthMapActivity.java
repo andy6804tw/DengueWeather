@@ -3,6 +3,7 @@ package com.andy6804tw.dengueweather;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -44,5 +45,9 @@ public class EarthMapActivity extends AppCompatActivity {
         }
 
         return super.onKeyDown(keyCode, event);
+    }
+    public void onClick(View view) {
+        SpinMenu. openMenu();
+        finish();
     }
 }

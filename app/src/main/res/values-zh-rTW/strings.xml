@@ -5,6 +5,12 @@
     <string name="felt">體感溫度</string>
     <string name="humidity">濕度</string>
     <string name="visiblity">能見度</string>
+    <string name="dengue_fever">登革熱災情</string>
+    <string name="taiwan">台灣</string>
+    <string name="global">全球</string>
+    <string name="weather">即時天氣</string>
+    <string name="global_map">全球地圖</string>
+    <string name="tw_dendue_map">全台登革熱地圖</string>
 
     <string name="code00">龍捲風</string>
     <string name="code01">熱帶風暴</string>

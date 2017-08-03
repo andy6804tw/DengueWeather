@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         // 设置页面标题
         List<String> hintStrList = new ArrayList<>();
-        hintStrList.add("即時天氣");
-        hintStrList.add("國際新聞");
-        hintStrList.add("全球地圖");
-        hintStrList.add("登革熱地圖");
+        hintStrList.add(getResources().getString(R.string.weather));
+        hintStrList.add(getResources().getString(R.string.dengue_fever));
+        hintStrList.add(getResources().getString(R.string.global_map));
+        hintStrList.add(getResources().getString(R.string.tw_dendue_map));
         hintStrList.add("走走看看");
         hintStrList.add("阅读空间");
         hintStrList.add("听听唱唱");
