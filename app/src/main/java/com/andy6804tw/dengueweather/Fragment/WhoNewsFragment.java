@@ -9,19 +9,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.andy6804tw.dengueweather.Adapter.TWNewsRecyclerAdapter;
+import com.andy6804tw.dengueweather.Adapter.WhoNewsRecyclerAdapter;
 import com.andy6804tw.dengueweather.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TaiwanNewsFragment extends Fragment {
+public class WhoNewsFragment extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
 
-    public TaiwanNewsFragment() {
+    public WhoNewsFragment() {
         // Required empty public constructor
     }
 
@@ -29,15 +29,15 @@ public class TaiwanNewsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_taiwan_news, container, false);
+
+        View view=inflater.inflate(R.layout.fragment_who_news, container, false);
         recyclerView =(RecyclerView) view.findViewById(R.id.recycler_view);
 
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new TWNewsRecyclerAdapter(getContext());
+        adapter = new WhoNewsRecyclerAdapter(getContext());
         recyclerView.setAdapter(adapter);
-
 
         return view;
     }

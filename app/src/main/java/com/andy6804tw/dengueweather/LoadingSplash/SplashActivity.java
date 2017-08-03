@@ -25,6 +25,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.andy6804tw.dengueweather.DataBase.DBAccessWeather;
+import com.andy6804tw.dengueweather.DataModle.TWNewsModel;
+import com.andy6804tw.dengueweather.DataModle.WhoNewsModel;
 import com.andy6804tw.dengueweather.MainActivity;
 import com.andy6804tw.dengueweather.R;
 
@@ -36,6 +38,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import taobe.tec.jcc.JChineseConvertor;
 
@@ -49,6 +52,8 @@ public class SplashActivity extends AppCompatActivity {
     private String mLanguage="en",mCity,mCountry,mDistrict,mVillage;
     private Context mContext;
     private static Document document;
+    public static ArrayList<TWNewsModel>twNewsList;
+    public static ArrayList<WhoNewsModel>whoNewsList;
 
 
     @Override
@@ -60,6 +65,8 @@ public class SplashActivity extends AppCompatActivity {
         localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
         mContext=getApplicationContext();
         mAccess = new DBAccessWeather(this, "weather", null,1);//Sqlite上版本
+        twNewsList=new ArrayList<>();
+        whoNewsList=new ArrayList<>();
 
     }
 
@@ -365,8 +372,10 @@ public class SplashActivity extends AppCompatActivity {
                         String title=data[0];
                         String url=element.select("a").attr("abs:href");
                         String date=data[2];
+                        twNewsList.add(new TWNewsModel(title,url,date));
                         //Log.e("Data"+c++,title+"     "+date+"      "+url);
                     }
+                    Log.e("daffa",twNewsList.size()+" ");
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -397,10 +406,10 @@ public class SplashActivity extends AppCompatActivity {
                         JChineseConvertor jChineseConvertor = JChineseConvertor.getInstance();
                         String title=element.select("title").text();
                         String description=element.select("description").text();
-                        String pubDate=element.select("pubDate").text();
+                        String date=element.select("pubDate").text();
                         String link=element.select("link").text();
-
-                        Log.e("Data"+c++,jChineseConvertor.s2t(title)+" "+jChineseConvertor.s2t(description)+" "+jChineseConvertor.s2t(pubDate)+" "+link);
+                        whoNewsList.add(new WhoNewsModel(jChineseConvertor.s2t(title),jChineseConvertor.s2t(description),jChineseConvertor.s2t(date),link));
+                        //Log.e("Data"+c++,jChineseConvertor.s2t(title)+" "+jChineseConvertor.s2t(description)+" "+jChineseConvertor.s2t(date)+" "+link);
                     }
 
                 } catch (IOException e) {

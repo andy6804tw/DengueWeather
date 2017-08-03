@@ -5,11 +5,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.WindowManager;
 
 import com.andy6804tw.dengueweather.Adapter.ViewPagerAdapter;
 import com.andy6804tw.dengueweather.Fragment.Fragment1;
-import com.andy6804tw.dengueweather.Fragment.Fragment2;
 import com.andy6804tw.dengueweather.Fragment.TaiwanNewsFragment;
+import com.andy6804tw.dengueweather.Fragment.WhoNewsFragment;
 import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
 import com.kekstudio.dachshundtablayout.DachshundTabLayout;
 import com.kekstudio.dachshundtablayout.indicators.DachshundIndicator;
@@ -25,14 +26,14 @@ public class NewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//頂部工具列隱
         toolbar=(Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("登革熱災情");
         setSupportActionBar(toolbar);
 
         viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragments(new TaiwanNewsFragment(),"台灣");
-        viewPagerAdapter.addFragments(new Fragment2(),"全球");
+        viewPagerAdapter.addFragments(new WhoNewsFragment(),"全球");
         viewPagerAdapter.addFragments(new Fragment1(),"看見空品");
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setAdapter(viewPagerAdapter);
