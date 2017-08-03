@@ -24,7 +24,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".EarthMapActivity" />
-        <activity android:name=".DengueMapActivity"></activity>
+        <activity android:name=".DengueMapActivity" />
+        <activity android:name=".CheckedDengueActivity"></activity>
     </application>
 
 </manifest>

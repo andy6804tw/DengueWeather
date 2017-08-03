@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
+import com.andy6804tw.dengueweather.Fragment.CheckedDengueFragment;
 import com.andy6804tw.dengueweather.Fragment.DengueMapFragment;
 import com.andy6804tw.dengueweather.Fragment.EarthMapFragment;
 import com.andy6804tw.dengueweather.Fragment.NewsFragment;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(new NewsFragment());
         fragmentList.add(new EarthMapFragment());
         fragmentList.add(new DengueMapFragment());
+        fragmentList.add(new CheckedDengueFragment());
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

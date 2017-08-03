@@ -19,6 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.andy6804tw.dengueweather.CheckedDengueActivity;
 import com.andy6804tw.dengueweather.DengueMapActivity;
 import com.andy6804tw.dengueweather.EarthMapActivity;
 import com.andy6804tw.dengueweather.NewsActivity;
@@ -162,6 +163,8 @@ public class SpinMenu extends FrameLayout {
                 mContext.startActivity(new Intent(mContext, EarthMapActivity.class));
             else if(mPosition==3)
                 mContext.startActivity(new Intent(mContext, DengueMapActivity.class));
+            else if(mPosition==4)
+                mContext.startActivity(new Intent(mContext, CheckedDengueActivity.class));
         }
     };
 

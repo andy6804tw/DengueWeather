@@ -61,8 +61,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         //更改狀態欄顏色
-        WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
-        localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+        //WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+        //localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//頂部工具列隱
         mContext=getApplicationContext();
         mAccess = new DBAccessWeather(this, "weather", null,1);//Sqlite上版本
         twNewsList=new ArrayList<>();
@@ -284,7 +285,7 @@ public class SplashActivity extends AppCompatActivity {
         if (mGps.canGetLocation && mGps.getLatitude() != (0.0) && mGps.getLongtitude() != (0.0)) {
             mLatitude = mGps.getLatitude();
             mLongitude =mGps.getLongtitude();
-            if((mLatitude>=20&&mLatitude<=27)&&(mLongitude>=118&&mLongitude<=124))
+            if((mLatitude>=20&&mLatitude<=27)&&(mLongitude>=118&&mLongitude<=124)&&getResources().getConfiguration().locale.getCountry().equals("TW"))
                 mLanguage="zh-TW";
 
             //Toast.makeText(getApplicationContext(), "Your Location is->\nLat: " + latitude + "\nLong: " + longtitude, Toast.LENGTH_LONG).show();

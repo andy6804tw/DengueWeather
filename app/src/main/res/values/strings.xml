@@ -12,6 +12,9 @@
     <string name="weather">Weather</string>
     <string name="global_map">Global Map</string>
     <string name="tw_dendue_map">Taiwan Dengue map</string>
+    <string name="item_global_temp">Global temperature map</string>
+    <string name="item_global_wet">Global humidity map</string>
+    <string name="item_global_dengue">Global dengue map</string>
 
     <string name="code00">tornado</string>
     <string name="code01">tropical storm</string>

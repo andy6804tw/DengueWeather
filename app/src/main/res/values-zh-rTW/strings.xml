@@ -11,6 +11,9 @@
     <string name="weather">即時天氣</string>
     <string name="global_map">全球地圖</string>
     <string name="tw_dendue_map">全台登革熱地圖</string>
+    <string name="item_global_temp">全球溫度地圖</string>
+    <string name="item_global_wet">全球濕度地圖</string>
+    <string name="item_global_dengue">全球登革熱地圖</string>
 
     <string name="code00">龍捲風</string>
     <string name="code01">熱帶風暴</string>
