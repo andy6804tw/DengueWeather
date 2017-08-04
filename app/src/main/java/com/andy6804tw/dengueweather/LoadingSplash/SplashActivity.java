@@ -29,6 +29,8 @@ import com.andy6804tw.dengueweather.DataModle.TWNewsModel;
 import com.andy6804tw.dengueweather.DataModle.WhoNewsModel;
 import com.andy6804tw.dengueweather.MainActivity;
 import com.andy6804tw.dengueweather.R;
+import com.andy6804tw.dengueweather.Utils.ExitApplication;
+import com.andy6804tw.dengueweather.Utils.GPSTracker;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -61,9 +63,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         //更改狀態欄顏色
-        //WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
-        //localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//頂部工具列隱
+        WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+        localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+        ExitApplication.getInstance().addActivity(this);
         mContext=getApplicationContext();
         mAccess = new DBAccessWeather(this, "weather", null,1);//Sqlite上版本
         twNewsList=new ArrayList<>();

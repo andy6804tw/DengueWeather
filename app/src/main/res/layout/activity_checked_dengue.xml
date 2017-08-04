@@ -39,7 +39,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="60dp"
             android:layout_marginStart="60dp"
-            android:text="@string/tw_dendue_map"
+            android:text="@string/dengun_prevention"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 

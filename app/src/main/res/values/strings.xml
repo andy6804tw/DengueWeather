@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DengueWeather</string>
+    <string name="app_name">Dengue helper</string>
     <string name="pressure">Pressure</string>
     <string name="windSpeed">WindSpeed</string>
     <string name="copyright">Copyright © 2017 Weather disease. All rights reserved. </string>
@@ -15,6 +15,7 @@
     <string name="item_global_temp">Global temperature map</string>
     <string name="item_global_wet">Global humidity map</string>
     <string name="item_global_dengue">Global dengue map</string>
+    <string name="dengun_prevention">Dengun fever prevention</string>
 
     <string name="code00">tornado</string>
     <string name="code01">tropical storm</string>

@@ -1,4 +1,4 @@
-package com.andy6804tw.dengueweather.LoadingSplash;
+package com.andy6804tw.dengueweather.Utils;
 
 import android.Manifest;
 import android.app.Service;
