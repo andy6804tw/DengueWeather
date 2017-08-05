@@ -3,7 +3,6 @@ package com.andy6804tw.dengueweather;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,7 +19,7 @@ public class EarthMapActivity extends AppCompatActivity {
 
     private WebView mWebView = null;
     private Toolbar toolbar;
-    private String mUrl="http://www.healthmap.org/dengue/en/";
+    private String mUrl="https://earth.nullschool.net/zh-cn/#current/wind/surface/level/overlay=total_precipitable_water/grid=on/winkel3=56.59,-2.58,298/loc=87.436,3.031";
     private TextView tvTitle;
 
     @Override
@@ -66,11 +65,7 @@ public class EarthMapActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.item_global_dengue:
-                mUrl="http://www.healthmap.org/dengue/en/";
-                tvTitle.setText(getResources().getString(R.string.item_global_dengue));
-                onResume();
-                return true;
+
             case R.id.item_global_temp:
                 mUrl="https://earth.nullschool.net/zh-cn/#current/wind/surface/level/overlay=total_precipitable_water/grid=on/winkel3=56.59,-2.58,298/loc=87.436,3.031";
                 tvTitle.setText(getResources().getString(R.string.item_global_temp));
@@ -81,8 +76,12 @@ public class EarthMapActivity extends AppCompatActivity {
                 tvTitle.setText(getResources().getString(R.string.item_global_wet));
                 onResume();
                 return true;
+            case R.id.item_global_dengue:
+                mUrl="http://www.healthmap.org/dengue/en/";
+                tvTitle.setText(getResources().getString(R.string.item_global_dengue));
+                onResume();
+                return true;
             default:
-                Log.e("Dafdsv","ddddd12651");
                 return super.onOptionsItemSelected(item);
         }
     }
