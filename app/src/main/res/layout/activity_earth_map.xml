@@ -35,7 +35,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="60dp"
             android:layout_marginStart="60dp"
-            android:text="@string/item_global_temp"
+            android:text="@string/item_global_dengue"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:layout_centerVertical="true"

@@ -19,7 +19,7 @@ public class EarthMapActivity extends AppCompatActivity {
 
     private WebView mWebView = null;
     private Toolbar toolbar;
-    private String mUrl="https://earth.nullschool.net/zh-cn/#current/wind/surface/level/overlay=total_precipitable_water/grid=on/winkel3=56.59,-2.58,298/loc=87.436,3.031";
+    private String mUrl="http://www.healthmap.org/dengue/en/";
     private TextView tvTitle;
 
     @Override
