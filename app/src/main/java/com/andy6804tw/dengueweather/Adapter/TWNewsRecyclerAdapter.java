@@ -17,8 +17,8 @@ import com.andy6804tw.dengueweather.R;
 public class TWNewsRecyclerAdapter extends RecyclerView.Adapter<TWNewsRecyclerAdapter.ViewHolder> {
 
 
-    private int[] mImages={R.mipmap.news1,R.mipmap.news2,R.mipmap.news3,R.mipmap.news4,R.mipmap.news5,R.mipmap.news6,R.mipmap.news7
-            ,R.mipmap.news8,R.mipmap.news9,R.mipmap.news10,R.mipmap.news11,R.mipmap.news12,R.mipmap.news13,R.mipmap.news14,R.mipmap.news15};
+    private int[] mImages={R.mipmap.news15,R.mipmap.news1,R.mipmap.news2,R.mipmap.news3,R.mipmap.news4,R.mipmap.news5,R.mipmap.news6,R.mipmap.news7
+            ,R.mipmap.news8,R.mipmap.news9,R.mipmap.news10,R.mipmap.news11,R.mipmap.news12,R.mipmap.news13,R.mipmap.news14};
     private Context mContext;
 
     public TWNewsRecyclerAdapter(Context context){
