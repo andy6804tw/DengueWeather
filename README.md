@@ -12,7 +12,7 @@
 
 Introduce:</br>
 1. Global real-time weather : Temperature、Wind speed and direction、Atmospheric and Air pressure、Astronomy、Weather forecast.</br>
-2. Real-time disease news : including Taiwan dengue fever news and World Health Organization(WHO) disease news,and you can check world disease disaster news before you Travel abroad.</br>
+2. Real-time disease news : including Taiwan dengue fever news and World Health Organization(WHO) disease news,and you can check world disease disaster news before you travel abroad.</br>
 3. Global map : Global temperature map、Global dengue map、Global humidity map.</br>
 4. Taiwan dengue map : The number of Taiwan dengue fever ,and region occur in anywhere.
 5. Dengun fever prevention : Dengue knowledge and simple check whether you live in danger.
