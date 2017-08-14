@@ -5,14 +5,14 @@ package com.andy6804tw.dengueweather.DataModle;
  */
 
 public class NoticeModel {
-    private String level,region,disease,date,context;
+    private String level,region,date,detail,url;
 
-    public NoticeModel(String level, String region, String disease, String date, String context) {
+    public NoticeModel(String level, String region, String date, String detail,String url) {
         this.level = level;
         this.region = region;
-        this.disease = disease;
         this.date = date;
-        this.context = context;
+        this.detail = detail;
+        this.url = url;
     }
 
     public String getLevel() {
@@ -31,14 +31,6 @@ public class NoticeModel {
         this.region = region;
     }
 
-    public String getDisease() {
-        return disease;
-    }
-
-    public void setDisease(String disease) {
-        this.disease = disease;
-    }
-
     public String getDate() {
         return date;
     }
@@ -47,11 +39,18 @@ public class NoticeModel {
         this.date = date;
     }
 
-    public String getContext() {
-        return context;
+    public String getDetail() {
+        return detail;
     }
 
-    public void setContext(String context) {
-        this.context = context;
+    public void setDetail(String context) {
+        this.detail = detail;
+    }
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

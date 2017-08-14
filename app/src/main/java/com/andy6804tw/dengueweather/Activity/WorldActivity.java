@@ -42,8 +42,8 @@ public class WorldActivity extends AppCompatActivity {
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         viewPager=(ViewPager)findViewById(R.id.viewPager);
         viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragments(new AlertFragment(),"今日行程");
-        viewPagerAdapter.addFragments(new NoticeFragment(),"今日進度");
+        viewPagerAdapter.addFragments(new AlertFragment(),"登革熱預警");
+        viewPagerAdapter.addFragments(new NoticeFragment(),"旅遊災情");
 
         //setupTabIcons();
     }
