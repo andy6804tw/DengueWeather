@@ -1,4 +1,4 @@
-package com.andy6804tw.dengueweather;
+package com.andy6804tw.dengueweather.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
+import com.andy6804tw.dengueweather.R;
 import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
 
 public class EarthMapActivity extends AppCompatActivity {

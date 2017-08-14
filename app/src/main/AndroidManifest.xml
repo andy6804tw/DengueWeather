@@ -20,12 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WeatherNowActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".NewsActivity" />
-        <activity android:name=".EarthMapActivity" />
-        <activity android:name=".DengueMapActivity" />
-        <activity android:name=".CheckedDengueActivity"></activity>
+        <activity android:name=".Activity.WeatherNowActivity" />
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.NewsActivity" />
+        <activity android:name=".Activity.EarthMapActivity" />
+        <activity android:name=".Activity.DengueMapActivity" />
+        <activity android:name=".Activity.CheckedDengueActivity" />
+        <activity android:name=".Activity.WorldActivity"></activity>
     </application>
 
 </manifest>

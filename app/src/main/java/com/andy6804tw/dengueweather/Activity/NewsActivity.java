@@ -1,4 +1,4 @@
-package com.andy6804tw.dengueweather;
+package com.andy6804tw.dengueweather.Activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import com.andy6804tw.dengueweather.Adapter.ViewPagerAdapter;
 import com.andy6804tw.dengueweather.Fragment.TaiwanNewsFragment;
 import com.andy6804tw.dengueweather.Fragment.WhoNewsFragment;
+import com.andy6804tw.dengueweather.R;
 import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
 import com.kekstudio.dachshundtablayout.DachshundTabLayout;
 import com.kekstudio.dachshundtablayout.indicators.DachshundIndicator;

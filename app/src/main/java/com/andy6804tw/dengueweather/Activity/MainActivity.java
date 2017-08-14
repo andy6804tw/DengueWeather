@@ -1,4 +1,4 @@
-package com.andy6804tw.dengueweather;
+package com.andy6804tw.dengueweather.Activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import com.andy6804tw.dengueweather.Fragment.DengueMapFragment;
 import com.andy6804tw.dengueweather.Fragment.EarthMapFragment;
 import com.andy6804tw.dengueweather.Fragment.NewsFragment;
 import com.andy6804tw.dengueweather.Fragment.WeatherNowFragment;
+import com.andy6804tw.dengueweather.Fragment.WorldFragment;
+import com.andy6804tw.dengueweather.R;
 import com.andy6804tw.dengueweather.SpinMenu.OnSpinMenuStateChangeListener;
 import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
 import com.andy6804tw.dengueweather.Utils.ExitApplication;
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(new EarthMapFragment());
         fragmentList.add(new DengueMapFragment());
         fragmentList.add(new CheckedDengueFragment());
+        fragmentList.add(new WorldFragment());
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

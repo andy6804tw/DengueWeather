@@ -8,7 +8,7 @@
     app:hint_text_color="#FFFFFF"
     app:hint_text_size="14sp"
     app:scale_ratio="0.36"
-    tools:context="com.andy6804tw.dengueweather.MainActivity">
+    tools:context="com.andy6804tw.dengueweather.Activity.MainActivity">
 
     <FrameLayout
         android:layout_width="match_parent"

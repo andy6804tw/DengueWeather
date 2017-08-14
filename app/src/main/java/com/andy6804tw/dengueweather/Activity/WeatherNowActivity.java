@@ -1,4 +1,4 @@
-package com.andy6804tw.dengueweather;
+package com.andy6804tw.dengueweather.Activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.andy6804tw.dengueweather.Adapter.RecyclerAdapter;
 import com.andy6804tw.dengueweather.DataBase.DBAccessWeather;
+import com.andy6804tw.dengueweather.R;
 import com.andy6804tw.weatherviewlibrary.WeatherView;
 import com.github.pwittchen.weathericonview.WeatherIconView;
 

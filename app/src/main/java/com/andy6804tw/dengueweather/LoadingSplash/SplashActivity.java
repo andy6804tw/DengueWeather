@@ -27,7 +27,7 @@ import com.android.volley.toolbox.Volley;
 import com.andy6804tw.dengueweather.DataBase.DBAccessWeather;
 import com.andy6804tw.dengueweather.DataModle.TWNewsModel;
 import com.andy6804tw.dengueweather.DataModle.WhoNewsModel;
-import com.andy6804tw.dengueweather.MainActivity;
+import com.andy6804tw.dengueweather.Activity.MainActivity;
 import com.andy6804tw.dengueweather.R;
 import com.andy6804tw.dengueweather.Utils.ExitApplication;
 import com.andy6804tw.dengueweather.Utils.GPSTracker;
@@ -284,6 +284,7 @@ public class SplashActivity extends AppCompatActivity {
     }
     private void init_GPS() {
         mGps = new GPSTracker(this);
+        //Log.e("gps",mGps.getLatitude()+" "+mGps.getLongtitude());
         if (mGps.canGetLocation && mGps.getLatitude() != (0.0) && mGps.getLongtitude() != (0.0)) {
             mLatitude = mGps.getLatitude();
             mLongitude =mGps.getLongtitude();
