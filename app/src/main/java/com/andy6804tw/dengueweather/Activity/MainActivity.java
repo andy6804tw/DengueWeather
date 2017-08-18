@@ -14,7 +14,6 @@ import com.andy6804tw.dengueweather.Fragment.DengueMapFragment;
 import com.andy6804tw.dengueweather.Fragment.EarthMapFragment;
 import com.andy6804tw.dengueweather.Fragment.NewsFragment;
 import com.andy6804tw.dengueweather.Fragment.WeatherNowFragment;
-import com.andy6804tw.dengueweather.Fragment.WorldFragment;
 import com.andy6804tw.dengueweather.R;
 import com.andy6804tw.dengueweather.SpinMenu.OnSpinMenuStateChangeListener;
 import com.andy6804tw.dengueweather.SpinMenu.SpinMenu;
@@ -43,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
         hintStrList.add(getResources().getString(R.string.global_map));
         hintStrList.add(getResources().getString(R.string.tw_dendue_map));
         hintStrList.add(getResources().getString(R.string.dengun_prevention));
-        hintStrList.add("阅读空间");
-        hintStrList.add("听听唱唱");
-        hintStrList.add("系统设置");
         spinMenu.setContent(MainActivity.this);
         spinMenu.setHintTextStrList(hintStrList);
         spinMenu.setHintTextColor(Color.parseColor("#FFFFFF"));
@@ -61,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(new EarthMapFragment());
         fragmentList.add(new DengueMapFragment());
         fragmentList.add(new CheckedDengueFragment());
-        fragmentList.add(new WorldFragment());
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

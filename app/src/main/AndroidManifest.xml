@@ -26,7 +26,6 @@
         <activity android:name=".Activity.EarthMapActivity" />
         <activity android:name=".Activity.DengueMapActivity" />
         <activity android:name=".Activity.CheckedDengueActivity" />
-        <activity android:name=".Activity.WorldActivity"></activity>
     </application>
 
 </manifest>

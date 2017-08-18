@@ -2,6 +2,7 @@ package com.andy6804tw.dengueweather.Activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.andy6804tw.dengueweather.Adapter.ViewPagerAdapter;
+import com.andy6804tw.dengueweather.Fragment.NoticeFragment;
 import com.andy6804tw.dengueweather.Fragment.TaiwanNewsFragment;
 import com.andy6804tw.dengueweather.Fragment.WhoNewsFragment;
 import com.andy6804tw.dengueweather.R;
@@ -33,8 +35,22 @@ public class NewsActivity extends AppCompatActivity {
         viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragments(new TaiwanNewsFragment(),getResources().getString(R.string.taiwan));
         viewPagerAdapter.addFragments(new WhoNewsFragment(),getResources().getString(R.string.global));
+        viewPagerAdapter.addFragments(new NoticeFragment(),getResources().getString(R.string.travel));
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setAdapter(viewPagerAdapter);
+
+        toolbar=(Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.dengue_fever));
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpinMenu. openMenu();
+                finish();
+            }
+        });
 
         tabLayout = (DachshundTabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);

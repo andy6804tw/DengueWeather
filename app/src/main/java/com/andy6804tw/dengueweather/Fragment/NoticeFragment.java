@@ -133,12 +133,12 @@ public class NoticeFragment extends Fragment {
         }
     }
 
-    String[] level={"2","3","1","1","1","2","1","1","1","1","1","1","1"};
+    String[] level={"3","3","1","2","1","3","1","1","1","1","1","1","1","2","2","2","1"};
     String[] region={"Dengue in Sri Lanka","Rabies in Malaysia","Measles in Democratic Republic of the Congo","Measles in France","Chickenpox (varicella) in Pakistan",
     "Dengue in Fiji","Malaria in Burundi","Measles in Belgium","Measles in Germany","Measles in Italy","Measles in Indonesia","Measles in Guinea",
-    "Avian Flu (H7N9) in China"};
+    "Avian Flu (H7N9) in China","Dengue & Zika in Thailand","Dengue in Myanmar","Dengue in Vietnam","Dengue in Taiwan"};
     String[] date={"August 09, 2017","August 09, 2017","July 07, 2017","July 07, 2017","June 02, 2017","May 12, 2017","April 24, 2017","April 17, 2017",
-    "April 17, 2017","April 17, 2017","April 07, 2017","March 10, 2017","March 07, 2017"};
+    "April 17, 2017","April 17, 2017","April 07, 2017","March 10, 2017","March 07, 2017","August 08, 2017","August 03, 2017","August 13, 2017","August 08, 2017"};
     String[] detail={"The Ministry of Health in Sri Lanka has reported a dengue epidemic. More than 100,000 cases have been reported across the country.",
     "The Malaysian state of Sarawak has declared parts of three divisions to be “rabies infectious areas.”",
     "Health officials in the Democratic Republic of the Congo have reported an outbreak of measles.",
@@ -151,7 +151,11 @@ public class NoticeFragment extends Fragment {
     "Health officials in Italy have reported an outbreak of measles. CDC recommends that travelers to Italy protect themselves by making sure they are vaccinated against measles.",
     "Health officials in Australia, Canada, and Taiwan have reported several cases of measles in travelers returning from Indonesia, including the island of Bali.",
     "A measles outbreak has been reported in Guinea, with 13 of the country’s 33 prefectures affected. CDC recommends that travelers to Guinea protect themselves by making sure they are vaccinated against measles, particularly infants 6–11 months of age (1 dose of measles vaccine) and children 12 months of age or older (2 doses of measles vaccine). Clinicians should keep measles in mind when treating patients with fever and rash, especially if the patient has recently traveled internationally.",
-    "Chinese health authorities have confirmed human cases of avian influenza A (H7N9) since September 2016. CDC advises people traveling to China to avoid contact with poultry (including poultry markets and farms), birds, and their droppings and to avoid eating undercooked poultry. Infected birds that appear healthy may still be able to transmit this virus to humans.",};
+    "Chinese health authorities have confirmed human cases of avian influenza A (H7N9) since September 2016. CDC advises people traveling to China to avoid contact with poultry (including poultry markets and farms), birds, and their droppings and to avoid eating undercooked poultry. Infected birds that appear healthy may still be able to transmit this virus to humans.",
+    "In the Samara region, the first case of Zika-AiF fever was recorded",
+    "PRO/MBDS> Dengue - Myanmar (14): Kayah",
+    "Ofensiva contra el dengue en Vietnam - Prensa Latina (blog)",
+    "Travel season to Southeast Asia and other dengue hot areas should do anti-mosquito measures"};
     String[] url={"https://wwwnc.cdc.gov/travel/notices/watch/dengue-sri-lanka",
     "https://wwwnc.cdc.gov/travel/notices/alert/rabies-malaysia",
     "https://wwwnc.cdc.gov/travel/notices/watch/measles-democratic-republic-of-the-congo",
@@ -164,6 +168,10 @@ public class NoticeFragment extends Fragment {
     "https://wwwnc.cdc.gov/travel/notices/watch/measles-italy",
     "https://wwwnc.cdc.gov/travel/notices/watch/measles-indonesia",
     "https://wwwnc.cdc.gov/travel/notices/watch/measles-guinea",
-    "https://wwwnc.cdc.gov/travel/notices/watch/avian-flu-h7n9"};
+    "https://wwwnc.cdc.gov/travel/notices/watch/avian-flu-h7n9",
+    "http://www.samara.aif.ru/health/details/lihoradka_zika_prishla_v_samarskuyu_oblast",
+    "http://www.prensa-latina.cu/index.php/component/content/?o=rn&id=107737&SEO=ofensiva-contra-el-dengue-en-vietnam",
+    "http://www.healthmap.org/ln.php?5247921",
+    "http://www.cdc.gov.tw/professional/info.aspx?treeid=6FD88FC9BF76E125&nowtreeid=283F5B5821AF305B&tid=2BF0DD6194D0F9D0"};
 
 }
